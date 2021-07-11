@@ -1,8 +1,10 @@
 from time import sleep
 from pyautogui import press, write, alert, confirm
-# alert
+# confirmação
 confirmação = confirm(text='Por favor retire as mãos do teclado', title='Cuidado', buttons=['OK', 'Cancel'])
 while confirmação  == 'OK':
+    #alert
+    alert('Tire as mão do teclado e mouse o script ira iniciar')
     # start brave
     press('winleft')
     sleep(1)
