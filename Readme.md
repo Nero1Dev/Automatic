@@ -1,0 +1,3 @@
+Olá bom dia kk, este é um código python, que eu escrevi apenas para abrir alguns aplicativos que eu costumo usar no meu dia a dia, e durante a formulação desse código, eu tive alguns problemas com a função PAUSE do próprio PyAutoGui então por isso decidi usar outra biblioteca
+para usar este código você tem que possuir a biblioteca do PyAutoGui: https://pyautogui.readthedocs.io/en/latest/
+By Nero Dev
