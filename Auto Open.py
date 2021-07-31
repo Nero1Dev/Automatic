@@ -1,32 +1,32 @@
 from time import sleep
-from pyautogui import press, write, alert, confirm
+import pyautogui as pa
 # confirmação
-confirmação = confirm(text='Por favor retire as mãos do teclado', title='Cuidado', buttons=['OK', 'Cancel'])
+confirmação = pa.confirm(text='Por favor retire as mãos do teclado', title='Cuidado', buttons=['OK', 'Cancel'])
 while confirmação  == 'OK':
     #alert
-    alert('Tire as mão do teclado e mouse o script ira iniciar')
+    pa.alert('Tire as mão do teclado e mouse o script ira iniciar')
     # start brave
-    press('winleft')
+    pa.press('win')
     sleep(1)
-    write('brave')
+    pa.write('brave')
     sleep(1)
-    press('enter')
+    pa.press('enter')
     sleep(2)
     # start whatsapp
-    press('winleft')
+    pa.press('winleft')
     sleep(1)
-    write('whatsapp')
+    pa.write('whatsapp')
     sleep(1)
-    press('enter')
+    pa.press('enter')
     sleep(2)
     # start files explorer
-    press('winleft')
+    pa.press('winleft')
     sleep(1)
-    write('explorador')
+    pa.write('explorador')
     sleep(1)
-    press('enter')
+    pa.press('enter')
     # alert
-    alert('O script foi finalizado!')
+    pa.alert('O script foi finalizado!')
     break
-if confirm == 'Cancel':
+if confirmação == 'Cancel':
     quit()
