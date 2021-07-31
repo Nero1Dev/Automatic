@@ -6,7 +6,7 @@ while confirmação  == 'OK':
     #alert
     pa.alert('Tire as mão do teclado e mouse o script ira iniciar')
     # start brave
-    pa.press('win')
+    pa.press('winleft')
     sleep(1)
     pa.write('brave')
     sleep(1)
