@@ -27,7 +27,7 @@ while True:
     if events == 'Abrir':
         janela.hide()
         if values['Navegador'] is True:
-            os.system(r'C:\Users\Dalmasso\AppData\Local\Vivaldi\Application\vivaldi.exe')
+            os.system(r'C:\Users\Nero1Dev\AppData\Local\Vivaldi\Application\vivaldi.exe')
             '''press('Winleft')
             write('Aplicativos: Vivaldi')
             sleep(1)
@@ -35,7 +35,7 @@ while True:
             sleep(3.5)'''
 
         if values['Whatsapp'] is True:
-            os.system(r'C:\Users\Dalmasso\AppData\Local\WhatsApp\WhatsApp.exe')
+            os.system(r'C:\Users\Nero1Dev\AppData\Local\WhatsApp\WhatsApp.exe')
             '''press('Winleft')
             write('Aplicativos: Whatsapp')
             sleep(1)
