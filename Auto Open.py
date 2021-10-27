@@ -1,32 +1,60 @@
+from PySimpleGUI import PySimpleGUI as sg  
 from time import sleep
-import pyautogui as pa
-# confirmação
-confirmação = pa.confirm(text='Por favor retire as mãos do teclado', title='Cuidado', buttons=['OK', 'Cancel'])
-while confirmação  == 'OK':
-    #alert
-    pa.alert('Tire as mão do teclado e mouse o script ira iniciar')
-    # start brave
-    pa.press('winleft')
-    sleep(1)
-    pa.write('brave')
-    sleep(1)
-    pa.press('enter')
-    sleep(2)
-    # start whatsapp
-    pa.press('winleft')
-    sleep(1)
-    pa.write('whatsapp')
-    sleep(1)
-    pa.press('enter')
-    sleep(2)
-    # start files explorer
-    pa.press('winleft')
-    sleep(1)
-    pa.write('explorador')
-    sleep(1)
-    pa.press('enter')
-    # alert
-    pa.alert('O script foi finalizado!')
-    break
-if confirmação == 'Cancel':
-    quit()
+import os
+from pyautogui import press, write
+
+sg.theme('SystemDefault')
+
+layout = [
+    [sg.Text('Aplicativos a serem executados: ')],
+    [sg.Checkbox('Navegador', default=False, key='Navegador')],
+    [sg.Checkbox('Whatsapp', default=False, key='Whatsapp')],
+    [sg.Checkbox('Explorador de arquivos', default=False, key='Arquivos')],
+    [sg.Checkbox('Configurações do mouse', default=False, key='Configs')],
+    [sg.Button('Play', key='Abrir'), sg.Button('Quit', key='Quit')]
+]
+
+janela = sg.Window('Nero1Dev', layout)
+
+while True:
+
+    events, values = janela.read()
+
+    if events == sg.WIN_CLOSED or events == 'Quit':
+        quit()
+        break
+    
+    if events == 'Abrir':
+        janela.hide()
+        if values['Navegador'] is True:
+            os.system(r'C:\Users\Dalmasso\AppData\Local\Vivaldi\Application\vivaldi.exe')
+            '''press('Winleft')
+            write('Aplicativos: Vivaldi')
+            sleep(1)
+            press('enter')
+            sleep(3.5)'''
+
+        if values['Whatsapp'] is True:
+            os.system(r'C:\Users\Dalmasso\AppData\Local\WhatsApp\WhatsApp.exe')
+            '''press('Winleft')
+            write('Aplicativos: Whatsapp')
+            sleep(1)
+            press('enter')
+            sleep(3.5)'''
+
+        if values['Arquivos'] is True:
+            os.system(r'%SystemRoot%\Explorer.exe')
+            '''press('Winleft')
+            write('Aplicativos: Explorador de arquivos')
+            sleep(1)
+            press('enter')
+            sleep(3.5)'''
+            
+        if values['Configs'] is True:
+            press('Winleft')
+            write('mouse')
+            sleep(1)
+            press('enter')
+            sleep(3.5)
+        sleep(3)
+        janela.UnHide()
